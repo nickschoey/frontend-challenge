@@ -5,7 +5,7 @@ const ACTIVE_CLASSNAME = 'active';
 class GridItem extends React.Component {
   render() {
     return (
-      <div className="grid-item"></div>
+      <div className="grid-item active"></div>
     );
   }
 }
