@@ -7,13 +7,19 @@ html, body {
   overflow: auto;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat($grid-item-amount, $grid-item-size);
-  grid-template-rows: repeat($grid-item-amount, $grid-item-size);
-  width: $grid-size;
-  height: $grid-size;
-  overflow: scroll;
+// .grid {
+//   display: grid;
+//   grid-template-columns: repeat($grid-item-amount, $grid-item-size);
+//   grid-template-rows: repeat($grid-item-amount, $grid-item-size);
+//   width: $grid-size;
+//   height: $grid-size;
+//   overflow: scroll;
+// }
+
+.hello {
+  width: 100vw;
+  height:100vh;
+  position: absolute;
 }
 
 .grid-item {

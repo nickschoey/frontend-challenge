@@ -1,12 +1,25 @@
 import React from 'react';
-
 const ACTIVE_CLASSNAME = 'active';
 
 class GridItem extends React.Component {
-  render() {
-    return (
-      <div className="grid-item active"></div>
+  constructor() {
+    super();
+    this.state = {
+      className: 'grid-item'
+    };
+  }
+  componentDidMount() {
+    setTimeout(
+      () =>
+        this.setState({
+          className: `grid-item ${ACTIVE_CLASSNAME}`
+        }),
+      30
     );
+  }
+
+  render() {
+    return <div className={this.state.className} style={this.props.style} />;
   }
 }
 

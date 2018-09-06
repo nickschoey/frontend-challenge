@@ -1,7 +1,8 @@
 import React from 'react';
+// import Grid from './Grid';
 import GridItem from '../components/GridItem';
-import { Grid } from 'react-virtualized';
-
+import { Grid, AutoSizer } from 'react-virtualized';
+import 'react-virtualized/styles.css';
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -9,7 +10,11 @@ class App extends React.Component {
       started: false
     };
   }
+  componentDidMount() {}
 
+  cellRenderer({ key, style }) {
+    return <GridItem key={key} classes="grid-item" style={style} />;
+  }
   render() {
     const state = this.state;
 
@@ -35,16 +40,22 @@ class App extends React.Component {
         </div>
       </section>
     ) : (
-      <Grid
-        height={4000}
-        width={4000}
-        cellRenderer={() => <GridItem className="grid-item active" />}
-        columnCount={40}
-        columnWidth={100}
-        rowCount={40}
-        rowHeight={100}
-        onScroll={() => console.log('aaa')}
-      />
+      <div className="hello">
+        <AutoSizer>
+          {({ height, width }) => (
+            <Grid
+              height={height}
+              width={width}
+              cellRenderer={this.cellRenderer}
+              columnCount={40}
+              columnWidth={100}
+              rowCount={40}
+              rowHeight={100}
+              onScroll={()=> console.log('aaaaa')}
+            />
+          )}
+        </AutoSizer>
+      </div>
     );
   }
 }
