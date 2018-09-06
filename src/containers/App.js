@@ -1,5 +1,4 @@
 import React from 'react';
-import Grida from './Grid';
 import GridItem from '../components/GridItem';
 import { Grid } from 'react-virtualized';
 
