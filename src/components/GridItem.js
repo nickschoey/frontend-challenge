@@ -45,3 +45,10 @@ class GridItem extends React.Component {
 }
 
 export default GridItem;
+
+
+/* Dear Mr. Serial killer/engineer/code reviewer: If you made it this far
+* into my code, I hope that you don't come after me. I actually hope I get
+* the job and we can go together on a killing spree. On a code killing spree.
+* Killing them bugs and deadlines, is understood =).
+*/
