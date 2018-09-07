@@ -1,20 +1,24 @@
 import React from 'react';
-// import Grid from './Grid';
-import GridItem from '../components/GridItem';
 import { Grid, AutoSizer } from 'react-virtualized';
+import GridItem from '../components/GridItem';
 import 'react-virtualized/styles.css';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      started: false
+      started: false,
     };
   }
-  componentDidMount() {}
 
+  /* returns components that will fill the grid with the proper class and the
+   * style given by react-virtualized properly passed as props to the created
+   * component.
+   * */
   cellRenderer({ key, style }) {
     return <GridItem key={key} classes="grid-item" style={style} />;
   }
+
   render() {
     const state = this.state;
 
@@ -40,7 +44,16 @@ class App extends React.Component {
         </div>
       </section>
     ) : (
-      <div className="hello">
+    /* The Grid component from react-virtualized renders the grid and takes
+     * care of the virtualization (rendering only the components in the
+     * viewport).
+     */
+
+    /* Autosizer expands the virtualized area to the size of the parent
+     * component 'grid-container' (100vh, 100vw).
+     */
+
+      <div className="grid-container">
         <AutoSizer>
           {({ height, width }) => (
             <Grid
@@ -51,7 +64,6 @@ class App extends React.Component {
               columnWidth={100}
               rowCount={40}
               rowHeight={100}
-              onScroll={()=> console.log('aaaaa')}
             />
           )}
         </AutoSizer>

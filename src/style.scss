@@ -7,6 +7,8 @@ html, body {
   overflow: auto;
 }
 
+// CSS Properties no longer needed
+
 // .grid {
 //   display: grid;
 //   grid-template-columns: repeat($grid-item-amount, $grid-item-size);
@@ -16,7 +18,7 @@ html, body {
 //   overflow: scroll;
 // }
 
-.hello {
+.grid-container {
   width: 100vw;
   height:100vh;
   position: absolute;
